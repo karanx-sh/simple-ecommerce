@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "ca69bbd3-709b-40b0-8cdc-ff9992318a1f",
+		"name": "Simple-Ecom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"karan patil\",\r\n\"email\":\"karan2000patil@gmail.com\",\r\n\"phoneNumber\":8169157715,\r\n\"password\":\"12345\",\r\n\"address\":[\r\n    {\r\n        \"street\":\"Karve Nagar, Kanjurmarg East\",\r\n        \"pincode\":40044,\r\n        \"selected\":true\r\n    }\r\n]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNumber",
+									"value": "8169157715",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Refresh Tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJyZWZyZXNoIiwiaWF0IjoxNjQ2NDIwNTc2LCJleHAiOjE2NDkwMTI1NzZ9.zcAQo34_tCAScBZxczz7wpngdFf7MiU_cMyuRejG9xg\",\r\n                    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY0MjA1NzYsImV4cCI6MTY0NjQ1MDU3Nn0.7lNEtg1e-ppNqtMGeCj9aAoo6JxpND7tRT0w6P-B2T8\"\r\n                }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/user/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"karan patil\",\r\n\"email\":\"karan@admin.com\",\r\n\"phoneNumber\":1234567890,\r\n\"password\":\"12345\",\r\n\"address\":[\r\n    {\r\n        \"street\":\"Karve Nagar, Kanjurmarg East\",\r\n        \"pincode\":40044,\r\n        \"selected\":true\r\n    }\r\n]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNumber",
+									"value": "8169157715",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Refresh Tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJyZWZyZXNoIiwiaWF0IjoxNjQ2NDIwNTc2LCJleHAiOjE2NDkwMTI1NzZ9.zcAQo34_tCAScBZxczz7wpngdFf7MiU_cMyuRejG9xg\",\r\n                    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY0MjA1NzYsImV4cCI6MTY0NjQ1MDU3Nn0.7lNEtg1e-ppNqtMGeCj9aAoo6JxpND7tRT0w6P-B2T8\"\r\n                }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/admin/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"admin",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

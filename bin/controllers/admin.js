@@ -25,7 +25,6 @@ exports.signup = async (req, res) => {
       !req.body.email ||
       !req.body.name ||
       !req.body.phoneNumber ||
-      !req.body.address ||
       !req.body.password
     )
       throw customError.dataInvalid;
@@ -41,12 +40,13 @@ exports.signup = async (req, res) => {
       phoneNumber: req.body.phoneNumber,
       password: req.body.password,
       address: req.body.address,
+      role: "ADMIN",
     });
 
     res.status(200).json({
       error: false,
       details: {
-        message: "User registered successfully",
+        message: "Admin registered successfully",
       },
     });
   } catch (error) {
@@ -64,12 +64,11 @@ exports.login = async (req, res) => {
       throw customError.dataInvalid;
     let user = await User.findOne({
       phoneNumber: req.body.phoneNumber,
-      role: "USER",
+      role: "ADMIN",
     });
     if (!user) throw customError.userNotFound;
     if (!bcrypt.compareSync(req.body.password, user.password))
       throw customError.authFailed;
-
     res.status(200).json({
       error: false,
       details: {
