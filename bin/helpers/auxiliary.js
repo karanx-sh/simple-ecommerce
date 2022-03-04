@@ -13,21 +13,21 @@ let AccessLimit = (tokens) => {
     return false;
   }
 };
-const tokenGenerator = (user, resetTokens = false) => {
+const tokenGenerator = async (user, resetTokens = false) => {
   try {
     let accessExpiry = parseInt(process.env.ACCESSEXPIRY, 10),
       refreshExpiry = parseInt(process.env.REFRESHEXPIRY, 10),
-      access = jwt.sign({ id: user.id, type: "access" }, process.env.JWT_KEY, {
+      access = jwt.sign({ id: user._id, type: "access" }, process.env.JWT_KEY, {
         expiresIn: accessExpiry,
       }),
       refresh = jwt.sign(
-        { id: user.id, type: "refresh" },
+        { id: user._id, type: "refresh" },
         process.env.JWT_KEY,
         { expiresIn: refreshExpiry }
       );
 
     if (resetTokens) user.tokens = [];
-    let tokens = JSON.parse(user.tokens);
+    let tokens = user.tokens;
     if (AccessLimit(tokens)) {
       tokens.unshift({
         refresh: refresh,
@@ -40,11 +40,8 @@ const tokenGenerator = (user, resetTokens = false) => {
         access: access,
       });
     }
-
-    // console.log(tokens);
-    user.tokens = JSON.stringify(tokens);
-    user.OTP = {};
-    user.save();
+    user.tokens = tokens;
+    await user.save();
 
     return {
       access: {

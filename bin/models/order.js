@@ -50,4 +50,4 @@ OrderSchema.pre("save", function (next) {
   next();
 });
 
-module.exports = mongoose.model("Cart", OrderSchema);
+module.exports = mongoose.model("Order", OrderSchema);
