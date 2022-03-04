@@ -3,29 +3,12 @@ const express = require("express");
 const app = express();
 const Mongoose = require("mongoose");
 
-Mongoose.connect(
-  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.t55j0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
-  () => {
-    console.log("Connected To Mongo");
-  }
-);
+const PROD_MONGO_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.t55j0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const DEV_MONGO_URL = "mongodb://127.0.0.1:27017/simple-ecom";
 
-const User = require("./bin/models/user");
-run();
-async function run() {
-  let user = await User.create({
-    name: "karan",
-    phoneNumber: 8169157715,
-    email: "karan2000patil@gmail.com",
-    address: [
-      {
-        street: "Loream sfd, sfffw,",
-        pincode: 400011,
-      },
-    ],
-  });
-  console.log(user);
-}
+Mongoose.connect(DEV_MONGO_URL, () => {
+  console.log("Connected To Mongo");
+});
 
 app.set("view engine", "ejs");
 app.use(express.json());

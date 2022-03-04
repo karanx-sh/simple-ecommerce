@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-
 const moment = require("moment-timezone");
+
+const { hashPassword } = require("../helpers/auxiliary");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -18,6 +19,7 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    lowercase: true,
   },
   address: [
     {
@@ -35,6 +37,17 @@ const UserSchema = new mongoose.Schema({
       },
     },
   ],
+  tokens: {
+    type: Array,
+    default: [],
+  },
+  password: {
+    type: String,
+  },
+  role: {
+    type: String,
+    default: "USER",
+  },
   createdAt: {
     type: Date,
     default: moment.tz(Date.now(), "Asia/Kolkata").toString(),
@@ -45,8 +58,10 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-UserSchema.pre("save", function (next) {
+UserSchema.pre("save", async function (next) {
   this.updatedAt = moment.tz(Date.now(), "Asia/Kolkata").toString();
+  if (!this.isModified("password")) return next();
+  this.password = await hashPassword(this.password);
   next();
 });
 
