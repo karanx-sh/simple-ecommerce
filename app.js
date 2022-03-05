@@ -16,15 +16,17 @@ app.use(require("body-parser").json());
 app.use(require("body-parser").urlencoded({ extended: true, limit: "100mb" }));
 app.use(require("body-parser").json({ limit: "100mb" }));
 
-app.use("/uploads", express.static("uploads/"));
+app.use("/public", express.static("uploads/"));
 
 //Routes Imports
 const userRoutes = require("./bin/routes/user");
 const adminRoutes = require("./bin/routes/admin");
+const productRoutes = require("./bin/routes/product");
 
 // Routes INIT
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
+app.use("/product", productRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).json({

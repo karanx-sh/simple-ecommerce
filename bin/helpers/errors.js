@@ -42,6 +42,12 @@ const badRequest = new CustomError(
   400
 );
 
+const dataNotFound = new CustomError(
+  "Data Not Found!",
+  `No data found !!`,
+  404
+);
+
 module.exports = {
   authFailed,
   dataInvalid,
@@ -50,4 +56,5 @@ module.exports = {
   duplicateRequest,
   serverDown,
   badRequest,
+  dataNotFound,
 };
