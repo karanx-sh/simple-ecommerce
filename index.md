@@ -1,26 +1,17 @@
-## Simple Ecommerce
+# Simple Ecommerce System
 
-## User Login
+- [User Registeration](https://ecom.karanpatil.xyz/signup)
 
-URL = https://ecom.karanpatil.xyz/login
+- [User Login](https://ecom.karanpatil.xyz/login)
 
-## User Registeration
+- [Admin Login](https://ecom.karanpatil.xyz/ui/admin/login)
 
-URL = https://ecom.karanpatil.xyz/signup
+## Login Credentials
 
-## Admin Login
-
-URL = https://ecom.karanpatil.xyz/ui/admin/login
-
-## ADMIN Login Credentials
-
-Username = 1234567890
-Password = 12345
-
-## User Login Credentials
-
-Username = 8169157715
-Password = 12345
+| User Type |  Username  | Password |
+| --------- | :--------: | -------: |
+| User      | 8169157715 |    12345 |
+| Admin     | 1234567890 |    12345 |
 
 ## POSTMAN DOC LINK
 
