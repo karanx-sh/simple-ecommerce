@@ -25,6 +25,7 @@ exports.placeOrder = async (req, res) => {
       UserId: req.user.id,
       PurchasedProducts: purchasedProducts,
     });
+    await Cart.deleteMany({ UserId: req.user.id });
     res.status(200).json({
       error: false,
       message: "Order Placed Successfully!",

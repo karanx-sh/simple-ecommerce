@@ -31,3 +31,8 @@ async function login(status) {
     );
   }
 }
+
+function logout() {
+  localStorage.clear();
+  window.location = "/login";
+}

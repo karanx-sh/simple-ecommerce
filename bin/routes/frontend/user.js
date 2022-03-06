@@ -8,4 +8,8 @@ Router.get("/login", (req, res) => {
   res.render("user/login");
 });
 
+Router.get("/cart", (req, res) => {
+  res.render("user/cart");
+});
+
 module.exports = Router;

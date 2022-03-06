@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<div class="container">
+      <div class="py-5 text-center">
+        <h2>Checkout form</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul id="purchased_products" class="list-group mb-3">
+          </ul>
+
+          <div id="placeOrder" class="card p-2">
+           <button onclick="placeOrder()"  class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          </div>
+          
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      
+    </div>
+    <script>
+      viewCart();
+    </script>
+<%- include('partials/footer') %>
