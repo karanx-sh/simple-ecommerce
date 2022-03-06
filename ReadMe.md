@@ -1,10 +1,8 @@
 # Simple Ecommerce System
 
-## User Login
-
-URL = https://ecom.karanpatil.xyz/login
-
 - [User Registeration](https://ecom.karanpatil.xyz/signup)
+
+- [User Login](https://ecom.karanpatil.xyz/login)
 
 - [Admin Login](https://ecom.karanpatil.xyz/ui/admin/login)
 
