@@ -10,7 +10,7 @@ const { random } = require("../helpers/auxiliary");
 const OrderSchema = new mongoose.Schema({
   InvoiceId: {
     type: String,
-    default: () => `S-ECOM-${random(5)}`,
+    default: () => `S-ECOM-${random(8)}`,
   },
   UserId: {
     type: mongoose.SchemaTypes.ObjectId,
@@ -48,6 +48,14 @@ const OrderSchema = new mongoose.Schema({
 OrderSchema.pre("save", function (next) {
   this.updatedAt = moment.tz(Date.now(), "Asia/Kolkata").toString();
   next();
+});
+
+OrderSchema.post("save", function () {
+  let totalPrice = 0;
+  this.PurchasedProducts.map((purchase) => {
+    totalPrice += purchase.quantity * purchase.price;
+  });
+  this.TotalPrice = totalPrice;
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

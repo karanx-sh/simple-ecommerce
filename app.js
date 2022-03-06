@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const Mongoose = require("mongoose");
 
+const CustomError = require("./bin/helpers/error");
+
 const PROD_MONGO_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.t55j0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const DEV_MONGO_URL = "mongodb://127.0.0.1:27017/simple-ecom";
 
@@ -22,15 +24,30 @@ app.use("/public", express.static("uploads/"));
 const userRoutes = require("./bin/routes/user");
 const adminRoutes = require("./bin/routes/admin");
 const productRoutes = require("./bin/routes/product");
+const cartRoutes = require("./bin/routes/cart");
+const orderRoutes = require("./bin/routes/order");
 
 // Routes INIT
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 app.use("/product", productRoutes);
+app.use("/cart", cartRoutes);
+app.use("/order", orderRoutes);
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    hello: "world",
+//******* ERROR HANDLING *******\\
+app.use((req, res, next) => {
+  const error = new CustomError(
+    "Not Found!",
+    `Uh oh! the path you are trying to reach we can't find it, we've checked each an every corner!`,
+    404
+  );
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  res.status(error.code || 500).json({
+    error: true,
+    details: error,
   });
 });
 
