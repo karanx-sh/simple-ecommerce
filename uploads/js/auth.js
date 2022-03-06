@@ -16,7 +16,7 @@ async function login(status) {
       position: "top-end",
       icon: "success",
       title: "Login Success !",
-      text: `Welcom back ${data.details.user.name}`,
+      text: `Welcome back ${data.details.user.name}`,
       showConfirmButton: false,
       timer: 1500,
     }).then(() => {
@@ -35,4 +35,58 @@ async function login(status) {
 function logout() {
   localStorage.clear();
   window.location = "/login";
+}
+
+async function register() {
+  try {
+    let name = document.getElementById("name").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let street = document.getElementById("street").value;
+    let pincode = document.getElementById("pincode").value;
+
+    if (
+      !name ||
+      phoneNumber.length != 10 ||
+      !phoneNumber ||
+      !email ||
+      !street ||
+      pincode.length < 4 ||
+      !pincode
+    )
+      throw "Fill All Details";
+
+    let url = "/user/signup";
+    let data = await axios.post(`${API}${url}`, {
+      email: email,
+      name: name,
+      address: [
+        {
+          street: street,
+          pincode: pincode,
+          selected: true,
+        },
+      ],
+      phoneNumber: phoneNumber,
+      password: password,
+    });
+    data = data.data;
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Registration Success !",
+      text: `Welcome ${name}`,
+      showConfirmButton: false,
+      timer: 1500,
+    }).then(() => {
+      window.location.href = "/login";
+    });
+  } catch (error) {
+    if (typeof error != "string") {
+      Swal.fire("Opps?", error.response.data.details.message, "question");
+    } else {
+      Swal.fire("Opps?", error, "question");
+    }
+  }
 }

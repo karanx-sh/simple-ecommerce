@@ -8,6 +8,10 @@ Router.get("/login", (req, res) => {
   res.render("user/login");
 });
 
+Router.get("/signup", (req, res) => {
+  res.render("user/register");
+});
+
 Router.get("/cart", (req, res) => {
   res.render("user/cart");
 });

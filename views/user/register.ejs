@@ -18,31 +18,52 @@
     .btn-custom-c {
         margin: 5%;
     }
+    .force-text-right{
+        text-align: left;
+    }
 </style>
 </head>
 <body>
     <div class="row mt-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
     <div class="card text-center">
   <div class="card-header">
-    Login
+    Register
   </div>
-  <div class="card-body">
-   <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">@</span>
-  <input id="username" type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
+  <div class="force-text-right card-body">
+<div class="mb-3">
+    <label>Name</label>
+    <input id="name" class="form-control" type="text" placeholder="Full Name" aria-label="default input example">
 </div>
-<input id="password" class="form-control" type="password" placeholder="password" aria-label="default input example">
+<div class="mb-3">
+    <label>Email</label>
+    <input id="email" class="form-control" type="email" placeholder="Email " aria-label="default input example">
+</div>
+   <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">+91</span>
+  <input minlength="10" maxlength="10" id="phoneNumber" type="number" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="mb-3">
+    <label>Password</label>
+    <input id="password" class="form-control" type="password" placeholder="password" aria-label="default input example">
+</div>
+<div class="mb-3">
+    <label>street</label>
+    <input id="street" class="form-control" type="text" placeholder="Street Name" aria-label="default input example">
+</div>
+<div class="mb-3">
+    <label>Pincode</label>
+    <input id="pincode" class="form-control" type="number" placeholder="40025" aria-label="default input example">
+</div>
   </div>
-  <a href="/signup">New Here</a>
-  <button class="btn btn-primary btn-custom-c" onclick="login(true)" type="submit">Login</button>
+  <button class="btn btn-primary btn-custom-c" onclick="register()" type="submit">Register</button>
   <div class="card-footer text-muted">
     <a href="https://github.com/karanx-sh">@karanx-sh</a>
   </div>
 </div>
 </div>
-<div class="col-md-4"></div>
+<div class="col-md-3"></div>
 </div>
 </body>
 </html>
