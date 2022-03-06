@@ -69,17 +69,21 @@ exports.login = async (req, res) => {
     if (!user) throw customError.userNotFound;
     if (!bcrypt.compareSync(req.body.password, user.password))
       throw customError.authFailed;
+    let tokenss = await tokenGenerator(user);
+    user = user.toJSON();
+    delete user["tokens"];
+    delete user["password"];
 
     res.status(200).json({
       error: false,
       details: {
-        token: await tokenGenerator(user),
+        token: tokenss,
         user: user,
       },
     });
   } catch (error) {
     console.log(`***** ERROR : ${req.originalUrl} ${error}`);
-    return res.status(error.code).json({
+    return res.status(error.code || 401).json({
       error: true,
       details: error,
     });

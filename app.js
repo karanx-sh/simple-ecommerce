@@ -20,19 +20,27 @@ app.use(require("body-parser").json({ limit: "100mb" }));
 
 app.use("/public", express.static("uploads/"));
 
-//Routes Imports
+//API Routes Imports
 const userRoutes = require("./bin/routes/user");
 const adminRoutes = require("./bin/routes/admin");
 const productRoutes = require("./bin/routes/product");
 const cartRoutes = require("./bin/routes/cart");
 const orderRoutes = require("./bin/routes/order");
 
-// Routes INIT
+//API Routes INIT
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 app.use("/product", productRoutes);
 app.use("/cart", cartRoutes);
 app.use("/order", orderRoutes);
+
+//FRONTEND ROUTES IMPORT
+const adminUIRoutes = require("./bin/routes/frontend/admin");
+const userUIRoutes = require("./bin/routes/frontend/user");
+
+//FRONTEND ROUTES INIT
+app.use("/ui/admin", adminUIRoutes);
+app.use("/", userUIRoutes);
 
 //******* ERROR HANDLING *******\\
 app.use((req, res, next) => {
