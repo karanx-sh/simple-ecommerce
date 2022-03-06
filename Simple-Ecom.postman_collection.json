@@ -145,7 +145,7 @@
 							"urlencoded": [
 								{
 									"key": "phoneNumber",
-									"value": "8169157715",
+									"value": "1234567890",
 									"type": "text"
 								},
 								{
@@ -345,6 +345,292 @@
 								"product",
 								"delete",
 								"62231357c662780631de9f88"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "622309c9d760e21700c9ae8a",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/cart/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"cart",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Cart By id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/cart/62243001e902e314192980a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"cart",
+								"62243001e902e314192980a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "622432115ad9212085d1085c",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "15",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/cart/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"cart",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8001/cart/delete/62243001e902e314192980a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"cart",
+								"delete",
+								"62243001e902e314192980a3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "place Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/order/place",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"order",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/order/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"order",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Orders ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/order/admin/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"order",
+								"admin",
+								"getAll"
 							]
 						}
 					},
