@@ -51,7 +51,7 @@ async function viewCart() {
     if (data.data.data.length == 0)
       document.getElementById("placeOrder").innerHTML = "Cart is Empty";
     data.data.data.map((cart) => {
-      Totalprice += cart.ProductId.price;
+      Totalprice += cart.ProductId.price * cart.quantity;
       html += `<li class="list-group-item d-flex justify-content-between lh-condensed">
               <img src="${cart.ProductId.image_link}" class="img-thumbnail img-custom-w" alt="...">
               <div>

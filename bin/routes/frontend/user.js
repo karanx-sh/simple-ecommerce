@@ -12,4 +12,8 @@ Router.get("/cart", (req, res) => {
   res.render("user/cart");
 });
 
+Router.get("/orders", (req, res) => {
+  res.render("user/myOrders");
+});
+
 module.exports = Router;
