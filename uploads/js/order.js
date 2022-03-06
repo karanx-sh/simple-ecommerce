@@ -58,6 +58,7 @@ async function getMyOrdersAdmin() {
     });
     myOrder.innerHTML = html;
   } catch (error) {
+    window.location.href = "/ui/admin/login";
     Swal.fire("Something Went Wrong !", error, "question");
   }
 }
