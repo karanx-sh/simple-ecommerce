@@ -43,6 +43,9 @@ app.use("/ui/admin", adminUIRoutes);
 app.use("/", userUIRoutes);
 
 //******* ERROR HANDLING *******\\
+app.use((req, res) => {
+  res.redirect("/");
+});
 app.use((req, res, next) => {
   const error = new CustomError(
     "Not Found!",

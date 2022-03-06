@@ -4,7 +4,12 @@ async function login(status) {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     let url = "/user/login";
-    if (!status) url = "/admin/login";
+    let callBack = "/";
+    if (!status) {
+      url = "/admin/login";
+      callBack = "/ui/admin/";
+    }
+
     let data = await axios.post(`${API}${url}`, {
       phoneNumber: username,
       password: password,
@@ -20,7 +25,7 @@ async function login(status) {
       showConfirmButton: false,
       timer: 1500,
     }).then(() => {
-      window.location.href = "/";
+      window.location.href = callBack;
     });
   } catch (error) {
     console.log(error);

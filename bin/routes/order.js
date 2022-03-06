@@ -14,7 +14,11 @@ Router.get(
 // view order by id user
 
 // view all order admin
-Router.get("/admin/getAll", orderController.viewAllOrderAdmin);
+Router.get(
+  "/admin/getAll",
+  authMiddleware.checkAdmin,
+  orderController.viewAllOrderAdmin
+);
 // view order by id admin
 
 // edit order admin
