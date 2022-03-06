@@ -5,6 +5,7 @@ const User = require("../models/user");
 const Product = require("../models/product");
 const Cart = require("../models/cart");
 const Order = require("../models/order");
+const { sendMail } = require("../helpers/auxiliary");
 
 exports.placeOrder = async (req, res) => {
   try {
@@ -26,6 +27,9 @@ exports.placeOrder = async (req, res) => {
       PurchasedProducts: purchasedProducts,
     });
     await Cart.deleteMany({ UserId: req.user.id });
+    let emailText = `You ordered total ${purchasedProducts.length} Products and Your
+                      total bill is generated ${order.TotalPrice} BTC`;
+    await sendMail(emailText, req.user.email, "Order confirmed !");
     res.status(200).json({
       error: false,
       message: "Order Placed Successfully!",

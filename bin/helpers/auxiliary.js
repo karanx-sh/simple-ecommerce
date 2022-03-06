@@ -121,7 +121,7 @@ const hashPassword = async (password) => {
   return await bcrypt.hash(password, bcrypt.genSaltSync(8));
 };
 
-const sendMail = async (otp, to, subject) => {
+const sendMail = async (text, to, subject) => {
   var transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
@@ -131,8 +131,8 @@ const sendMail = async (otp, to, subject) => {
     },
   });
 
-  data = await ejs.renderFile(__dirname + "/test.ejs", {
-    otp: otp,
+  data = await ejs.renderFile(__dirname + "/emailTemplate.ejs", {
+    text: text,
   });
 
   var mailOptions = {
