@@ -23,12 +23,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8001/user/signup",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/user/signup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"user",
 								"signup"
@@ -87,12 +88,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8001/user/refresh",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/user/refresh",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"user",
 								"refresh"
@@ -121,12 +123,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8001/admin/signup",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/admin/signup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"admin",
 								"signup"
@@ -156,12 +159,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/admin/login",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/admin/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"admin",
 								"login"
@@ -185,12 +189,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8001/admin/refresh",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/admin/refresh",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"admin",
 								"refresh"
@@ -214,7 +219,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "test",
+									"value": "Rolex Gold",
 									"type": "text"
 								},
 								{
@@ -224,7 +229,7 @@
 								},
 								{
 									"key": "price",
-									"value": "100000",
+									"value": "10",
 									"type": "text"
 								},
 								{
@@ -235,12 +240,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/product/add",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/product/add",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"product",
 								"add"
@@ -255,12 +261,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/product/getAll",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/product/getAll",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"product",
 								"getAll"
@@ -305,12 +312,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/product/update",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/product/update",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"product",
 								"update"
@@ -335,12 +343,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/product/delete/62231357c662780631de9f88",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/product/delete/62231357c662780631de9f88",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"product",
 								"delete",
@@ -386,12 +395,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/cart/add",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/cart/add",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"cart",
 								"add"
@@ -416,12 +426,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/cart/getAll",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/cart/getAll",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"cart",
 								"getAll"
@@ -446,12 +457,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/cart/62243001e902e314192980a3",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/cart/62243001e902e314192980a3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"cart",
 								"62243001e902e314192980a3"
@@ -491,12 +503,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8001/cart/update",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/cart/update",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"cart",
 								"update"
@@ -525,12 +538,13 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8001/cart/delete/62243001e902e314192980a3",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/cart/delete/62243001e902e314192980a3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"cart",
 								"delete",
@@ -561,12 +575,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/order/place",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/order/place",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"order",
 								"place"
@@ -583,7 +598,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1Mzg0MTksImV4cCI6MTY0NjU2ODQxOX0.JUl-OozAWar9bJbVnlUgeNhmeBBqhPblFqjDN2mNx-I",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjI2MjVjMjQ4NmU4Nzk4NzgyZTkxMSIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NDY1NzIzNzMsImV4cCI6MTY0NjYwMjM3M30.zgRFYeMJA0rjP5Gx1NtbtEbYzLxHVM96-G-WZor_fes",
 									"type": "string"
 								}
 							]
@@ -591,12 +606,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/order/getAll",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/order/getAll",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"order",
 								"getAll"
@@ -621,12 +637,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/order/admin/getAll",
-							"protocol": "http",
+							"raw": "https://ecom.karanpatil.xyz/order/admin/getAll",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ecom",
+								"karanpatil",
+								"xyz"
 							],
-							"port": "8001",
 							"path": [
 								"order",
 								"admin",
